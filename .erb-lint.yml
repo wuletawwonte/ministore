@@ -11,8 +11,6 @@ linters:
       - "config/**/*"
       - "node_modules/**/*"
     rubocop_config:
-      inherit_from:
-        - .rubocop.yml
       Layout/InitialIndentation:
         Enabled: false
       Layout/TrailingEmptyLines:
