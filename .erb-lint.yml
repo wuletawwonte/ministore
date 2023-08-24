@@ -1,5 +1,6 @@
 ---
-EnableDefaultLinters: false
+EnableDefaultLinters: true
+glob: "**/*.{html,text,js}{+*,}.erb"
 linters:
   ClosingErbTagIndent	:
     # Annoying based on how we write things
