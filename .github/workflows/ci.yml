@@ -1,0 +1,50 @@
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rubocop:
+    name: RuboCop
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Run RuboCop
+        run: bundle exec rubocop
+
+  erb-lint:
+    name: ERB Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Run ERB Lint
+        run: bundle exec erb_lint
+
+```
+
+This workflow defines two jobs: `rubocop` and `erb-lint`. Each job checks out the code, sets up the Ruby environment, installs dependencies, and runs the respective linter (`rubocop` or `erb_lint`) using `bundle exec`. Adjust the Ruby version in the `ruby-version` field to match the version used in your project.
