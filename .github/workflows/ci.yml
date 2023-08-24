@@ -44,4 +44,4 @@ jobs:
         run: bundle install --jobs 4 --retry 3
 
       - name: Run ERB Lint
-        run: bundle exec erblint
+        run: bundle exec erblint --lint-all
