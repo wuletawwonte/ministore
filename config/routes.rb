@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       root 'pages#home', as: :authenticated_root
     end
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'devise/sessions#new', as: :root
     end
   end
 end
