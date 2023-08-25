@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_25_200011) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_25_200415) do
   create_table "inventory_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "sku"
     t.integer "quantity"
-    t.string "category"
     t.string "brand"
     t.string "supplier"
     t.string "serial"
@@ -24,6 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_200011) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "item_category_id", null: false
+    t.index ["item_category_id"], name: "index_inventory_items_on_item_category_id"
     t.index ["name"], name: "index_inventory_items_on_name", unique: true
     t.index ["user_id"], name: "index_inventory_items_on_user_id"
   end
@@ -50,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_200011) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "inventory_items", "item_categories"
   add_foreign_key "inventory_items", "users"
   add_foreign_key "item_categories", "users", column: "users_id"
 end
