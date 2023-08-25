@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class InventoryItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -20,7 +22,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     warranty: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
