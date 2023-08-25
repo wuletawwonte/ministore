@@ -38,7 +38,6 @@ class ItemCategoryDashboard < Administrate::BaseDashboard
     description
     inventory_items
     name
-    users
     created_at
     updated_at
   ].freeze
@@ -47,10 +46,8 @@ class ItemCategoryDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    description
-    inventory_items
     name
-    users
+    description
   ].freeze
 
   # COLLECTION_FILTERS
