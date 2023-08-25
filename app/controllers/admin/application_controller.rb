@@ -10,12 +10,12 @@ module Admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
+      # redirect_to '/', alert: 'Not authorized.' unless current_user && current_user.admin?
+      redirect_to '/', alert: 'Not authorized.' unless current_user
     end
 
-    # Override this value to specify the number of elements to display at a time
-    # on index pages. Defaults to 20.
-    # def records_per_page
-    #   params[:per_page] || 20
-    # end
+    def records_per_page
+      params[:per_page] || 10
+    end
   end
 end

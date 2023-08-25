@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'pages#home', as: :authenticated_root
+      root to: "admin/inventory_items#index", as: :authenticated_root
     end
     unauthenticated do
       root 'devise/sessions#new', as: :root
