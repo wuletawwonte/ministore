@@ -12,13 +12,13 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     brand: Field::String,
-    category: Field::String,
     description: Field::Text,
     name: Field::String,
     quantity: Field::Number,
     serial: Field::String,
     sku: Field::String,
     supplier: Field::String,
+    item_category: Field::BelongsTo,
     user: Field::BelongsTo,
     warranty: Field::String,
     created_at: Field::DateTime,
@@ -33,7 +33,7 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     brand
-    category
+    item_category
     description
   ].freeze
 
@@ -42,7 +42,6 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     brand
-    category
     description
     name
     quantity
@@ -60,12 +59,12 @@ class InventoryItemDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     brand
-    category
     description
     name
     quantity
     serial
     sku
+    item_category
     supplier
     user
     warranty

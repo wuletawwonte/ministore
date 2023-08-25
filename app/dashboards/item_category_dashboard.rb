@@ -2,7 +2,7 @@
 
 require 'administrate/base_dashboard'
 
-class UserDashboard < Administrate::BaseDashboard
+class ItemCategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -11,12 +11,10 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    encrypted_password: Field::String,
+    description: Field::Text,
     inventory_items: Field::HasMany,
-    remember_created_at: Field::DateTime,
-    reset_password_sent_at: Field::DateTime,
-    reset_password_token: Field::String,
+    name: Field::String,
+    users: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -28,20 +26,19 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    email
+    description
     inventory_items
+    name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    email
-    encrypted_password
+    description
     inventory_items
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
+    name
+    users
     created_at
     updated_at
   ].freeze
@@ -50,7 +47,10 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    email
+    description
+    inventory_items
+    name
+    users
   ].freeze
 
   # COLLECTION_FILTERS
@@ -65,10 +65,10 @@ class UserDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how item categories are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    user.email
-  end
+  # def display_resource(item_category)
+  #   "ItemCategory ##{item_category.id}"
+  # end
 end
