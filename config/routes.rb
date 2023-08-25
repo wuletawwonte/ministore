@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :inventory_items
+      resources :users
+
+      root to: "inventory_items#index"
+    end
   devise_for :users
 
   devise_scope :user do
