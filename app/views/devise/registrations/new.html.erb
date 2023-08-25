@@ -1,29 +1,44 @@
-<h2>Sign up</h2>
+<section class="bg-gray-50 dark:bg-gray-900">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  Create an account
+              </h1>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'space-y-4 md:space-y-6' }) do |f| %>
+                  <%= render 'devise/shared/error_messages', resource: %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render 'devise/shared/error_messages', resource: %>
+                  <div>
+                    <%= f.label :email, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'wuletaw.wonte@amu.edu.et', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+                  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+                  <div>
+                    <%= f.label :password, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
+                    <%= f.password_field :password, autocomplete: 'new-password', placeholder: '••••••••', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+                  </div>
+
+                  <div>
+                      <%= f.label :password_confirmation, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
+                      <%= f.password_field :password_confirmation, autocomplete: 'new-password', placeholder: '••••••••', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+                  </div>
+
+                  <div class="flex items-start">
+                      <div class="flex items-center h-5">
+                        <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                      </div>
+                      <div class="ml-3 text-sm">
+                        <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
+                      </div>
+                  </div>
+                  
+                  <%= f.button 'Sign up', type: :submit, class: 'w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800' %>
+                  
+                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Already have an account? <%= link_to 'Login here', new_user_session_path, class: 'font-medium text-primary-600 hover:underline dark:text-primary-500' %>
+                  </p>
+              <% end %>
+          </div>
+      </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: 'new-password' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: 'new-password' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Sign up' %>
-  </div>
-<% end %>
-
-<%= render 'devise/shared/links' %>
+</section>
