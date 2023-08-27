@@ -83,6 +83,6 @@ gem 'administrate'
 
 gem 'omniauth', '~> 2.1'
 
-gem 'omniauth-microsoft-office365', '~> 0.0.8'
+gem 'omniauth-azure-activedirectory-v2', '~> 2.0'
 
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
