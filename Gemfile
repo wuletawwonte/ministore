@@ -71,3 +71,11 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'devise', '~> 4.9'
+
+gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'font-awesome-rails', '~> 4.7'
+
+gem 'administrate'
