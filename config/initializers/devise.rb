@@ -311,5 +311,5 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 
-  config.omniauth :microsoft_office365, ENV['OFFICE365_KEY'], ENV['OFFICE365_SECRET']
+  config.omniauth :azure_activedirectory_v2, client_id: ENV['OFFICE365_KEY'], client_secret: ENV['OFFICE365_SECRET'], tenant_id: ENV['OFFICE365_TENANT_ID']
 end

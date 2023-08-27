@@ -47,14 +47,14 @@
         <span>OR</span>
       </div>
 
-      <div class="mt-3">
-        <%= link_to user_microsoft_office365_omniauth_authorize_path, class: 'group flex w-full border justify-start px-3 py-3 text-sm font-semibold shadow-sm hover:color-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' do %>
-          <span class="mr-3"><%= image_tag 'ms-symbollockup_mssymbol_19.svg', class: 'h-5 w-5' %></span>
-          <span class="text-gray-500 group-hover:text-gray-800">Sign in with Microsoft</span>
-        <% end %>
-      </div>
-
     <% end %>
+
+    <div class="mt-3">
+      <%= button_to user_azure_activedirectory_v2_omniauth_authorize_path, method: :post, data: { turbo: "false" }, class: 'group flex w-full border justify-start px-3 py-3 text-sm font-semibold shadow-sm hover:color-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' do %>
+        <span class="mr-3"><%= image_tag 'ms-symbollockup_mssymbol_19.svg', class: 'h-5 w-5' %></span>
+        <span class="text-gray-500 group-hover:text-gray-800">Sign in with Microsoft</span>
+      <% end %>
+    </div>
 
 
     <p class="mt-10 text-center text-sm text-gray-500">
