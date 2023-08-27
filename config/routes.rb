@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     root to: 'inventory_items#index'
   end
-  
+
   devise_scope :user do
     get '/auth/microsoft_office365/callback', to: 'omniauth_callbacks#microsoft_office365'
 
