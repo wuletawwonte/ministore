@@ -1,16 +1,26 @@
 <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="mt-18 w-full bg-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Create an account
               </h1>
-              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'space-y-4 md:space-y-6' }) do |f| %>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'space-y-2 md:space-y-4' }) do |f| %>
                   <%= render 'devise/shared/error_messages', resource: %>
 
                   <div>
+                    <%= f.label :first_name, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
+                    <%= f.text_field :first_name, placeholder: 'wuletaw', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+                  </div>
+
+                  <div>
+                    <%= f.label :last_name, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
+                    <%= f.text_field :last_name, placeholder: 'wonte', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+                  </div>
+
+                  <div>
                     <%= f.label :email, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
-                    <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'wuletaw.wonte@amu.edu.et', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
+                    <%= f.email_field :email, autocomplete: 'email', placeholder: 'wuletaw.wonte@amu.edu.et', class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' %>
                   </div>
 
                   <div>

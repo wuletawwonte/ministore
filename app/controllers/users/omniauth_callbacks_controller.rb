@@ -6,6 +6,8 @@ module Users
       data = request.env['omniauth.auth']['info']
       @user = User.where(email: data['email']).first
       @user ||= User.create(
+        first_name: data['first_name'],
+        last_name: data['last_name'],
         email: data['email'],
         password: Devise.friendly_token[0, 20],
         provider: request.env['omniauth.auth']['provider'],
@@ -13,7 +15,7 @@ module Users
       )
 
       if @user.persisted?
-        flash[:notice] = 'Welcome!'
+        flash[:notice] = "Welcome #{@user.first_name}!"
         sign_in_and_redirect @user, event: :authentication
       else
         flash[:alert] = I18n.t 'Authentication failed, please try again.'
