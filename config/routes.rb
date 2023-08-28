@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
     root to: 'inventory_items#index'
   end
-  devise_for :users
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   devise_scope :user do
+    get '/auth/microsoft_office365/callback', to: 'omniauth_callbacks#microsoft_office365'
+
     authenticated :user do
       root to: 'admin/inventory_items#index', as: :authenticated_root
     end
