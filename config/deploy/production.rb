@@ -56,4 +56,4 @@
 #     # password: "please use keys"
 #   }
 
-server '10.144.130.246', user: 'ictadmin', roles: %w[app db web]
+server '10.144.130.247', user: 'deploy', roles: %w[app db web]
