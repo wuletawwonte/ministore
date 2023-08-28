@@ -59,3 +59,5 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '10.144.130.246', user: 'ictadmin', roles: %w{app db web}
