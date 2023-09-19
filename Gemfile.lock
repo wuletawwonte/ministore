@@ -132,7 +132,8 @@ GEM
       rubocop
       smart_properties
     erubi (1.12.0)
-    faraday (2.7.10)
+    faraday (2.7.11)
+      base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -212,7 +213,7 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-azure-activedirectory-v2 (2.0.1)
+    omniauth-azure-activedirectory-v2 (2.1.0)
       omniauth-oauth2 (~> 1.8)
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
@@ -364,7 +365,7 @@ DEPENDENCIES
   jsbundling-rails
   mysql2 (~> 0.5)
   omniauth (~> 2.1)
-  omniauth-azure-activedirectory-v2 (~> 2.0)
+  omniauth-azure-activedirectory-v2 (~> 2.1)
   omniauth-rails_csrf_protection (~> 1.0)
   puma (~> 6.3)
   rails (~> 7.0.7, >= 7.0.7.2)
