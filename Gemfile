@@ -87,7 +87,7 @@ gem 'omniauth-azure-activedirectory-v2', '~> 2.1'
 
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
-gem 'capistrano', '~> 3.17'
+gem 'capistrano', '~> 3.18'
 gem 'capistrano-passenger', '~> 0.2.1'
 gem 'capistrano-rails', '~> 1.6'
 gem 'capistrano-rbenv', '~> 2.2'
